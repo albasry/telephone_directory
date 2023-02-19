@@ -13,16 +13,12 @@ while True:
     # To force user to input numbers only, use .isdigit() method
     # To force user to input characters only, use .isalpha() method
     if user_input.isdigit() and len(user_input) == 10:
+        # So for taking integer input we have to type cast those inputs into
+        # integers by using Python built-in int() function.
+        if int(user_input) in tele_dir:
+            print(f"This number belongs to: {tele_dir[int(user_input)]}")
+        else:
+            print("Sorry, the number is not found")
         break
     else:
         print("Invalid: It must be ten digits!")
-
-# I used "nums" for Keys and "names" for values.
-for nums, names in tele_dir.items():
-    # So for taking integer input we have to type cast those inputs into
-    # integers by using Python built-in int() function.
-    if nums == int(user_input):
-        print(f"This number belongs to: {names}")
-        break
-else:
-    print("Sorry, the number is not found")
